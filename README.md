@@ -1,16 +1,28 @@
-## Hi there 👋
+# 👋 Salut, je suis Ysaiah !
 
-<!--
-**ysaiahdh/ysaiahdh** is a ✨ _special_ ✨ repository because its `README.md` (this file) appears on your GitHub profile.
+Je suis actuellement en **Première Générale**. J'habite en **France**.
+Passionné par le code et le pentesting, j'adore apprendre et travailler à plusieurs.
 
-Here are some ideas to get you started:
+---
 
-- 🔭 I’m currently working on ...
-- 🌱 I’m currently learning ...
-- 👯 I’m looking to collaborate on ...
-- 🤔 I’m looking for help with ...
-- 💬 Ask me about ...
-- 📫 How to reach me: ...
-- 😄 Pronouns: ...
-- ⚡ Fun fact: ...
--->
+### À propos de moi
+
+- 🔭 Je travaille actuellement sur **[Nom de ton projet ou "mon portfolio"]**.
+- 🌱 J'apprends actuellement **[Technologie, ex: React, Python, Docker]**.
+- ⚡ Fun fact : **[Un fait amusant sur toi, ex: Je code mieux avec du café]**.
+- 📫 Pour me contacter : **[Ton Email ou lien LinkedIn]**.
+
+---
+
+### 🛠️ Ma Stack Technique
+
+* **Langages :** [Ex: JavaScript, Python, Java, HTML/CSS]
+* **Frameworks :** [Ex: React, Vue, Spring Boot]
+* **Outils :** [Ex: Git, Docker, VS Code]
+
+---
+
+### 📊 Mes Statistiques GitHub
+
+![Stats GitHub de Ysaiah](https://github-readme-stats.vercel.app/api?username=ysaiahdh)](https://github.com/ysaiahdh/github-readme-stats)
+![Langages les plus utilisés](https://github-readme-stats.vercel.app/api/top-langs/?username=ysaiahdh&layout=compact&theme=radical)

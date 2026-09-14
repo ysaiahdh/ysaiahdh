@@ -1,0 +1,298 @@
+/* ==========================================================================
+   layout.css — page skeleton. MOBILE-FIRST: single column by default.
+   --------------------------------------------------------------------------
+   LAYOUT DECISIONS (why it looks like a TUI):
+   - Sticky hairline header = terminal title bar. Two-row wrap on mobile so
+     brand / status / actions never overflow 360px viewports.
+   - One centered .container (max 1080px) for the whole page = calm vertical
+     rhythm, easy to scan like a log file.
+   - Each section starts with a `$ section-name` mono prompt + hairline rule
+     to mimic terminal output blocks.
+   - Grids: 1 col → 2 col (≥720px) → 3 col (≥1024px). Projects span full rows
+     on purpose: case studies need room for problem/stack/metrics.
+   ========================================================================== */
+
+.container {
+  width: 100%;
+  max-width: var(--container);
+  margin-inline: auto;
+  padding-inline: var(--space-4);
+}
+
+/* -- Header (terminal title bar) ---------------------------------------- */
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  background: rgba(12, 14, 20, 0.92);
+  backdrop-filter: blur(8px);
+  border-bottom: 1px solid var(--border);
+}
+
+.header-inner {
+  display: flex;
+  flex-wrap: wrap; /* mobile: brand row wraps above nav/actions, no hamburger needed */
+  align-items: center;
+  gap: var(--space-2) var(--space-4);
+  min-height: var(--header-h);
+  padding-block: var(--space-2);
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+  margin-right: auto;
+  min-width: 0;
+}
+
+.brand-prompt {
+  color: var(--accent);
+  font-family: var(--mono);
+  font-size: 0.9rem;
+  user-select: none;
+}
+
+.brand-name {
+  color: var(--title);
+  font-family: var(--mono);
+  font-weight: 700;
+  font-size: 1rem;
+  white-space: nowrap;
+}
+
+.brand-tag {
+  display: block;
+  font-family: var(--mono);
+  font-size: 0.72rem;
+  color: var(--muted);
+  letter-spacing: 0.04em;
+  white-space: nowrap;
+}
+
+.site-nav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-1) var(--space-3);
+  font-size: 0.82rem;
+}
+
+.site-nav a {
+  color: var(--body);
+  padding: var(--space-1) var(--space-2);
+}
+
+.site-nav a:hover {
+  color: var(--accent);
+  text-decoration: none;
+  background: var(--accent-dim);
+  border-radius: var(--radius);
+}
+
+.header-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-2);
+}
+
+/* -- Main rhythm --------------------------------------------------------- */
+main {
+  flex: 1;
+}
+
+.section {
+  padding-block: var(--space-12);
+  border-bottom: 1px solid var(--border);
+}
+
+.section:last-child {
+  border-bottom: 0;
+}
+
+/* Section heading styled as a terminal command block */
+.section-head {
+  margin-bottom: var(--space-6);
+}
+
+.section-prompt {
+  font-family: var(--mono);
+  font-size: 0.8rem;
+  color: var(--accent);
+  display: block;
+  margin-bottom: var(--space-2);
+}
+
+.section-head h2 {
+  margin-bottom: var(--space-2);
+}
+
+.section-head p {
+  font-size: 0.95rem;
+}
+
+/* -- Hero ---------------------------------------------------------------- */
+.hero {
+  padding-block: var(--space-12) var(--space-8);
+}
+
+.hero-title {
+  margin-bottom: var(--space-4);
+}
+
+.hero-title .accent {
+  color: var(--accent);
+}
+
+.hero-lede {
+  font-size: 1.05rem;
+  margin-bottom: var(--space-6);
+}
+
+.hero-cta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-3);
+  list-style: none;
+  padding: 0;
+}
+
+.hero-meta {
+  margin-top: var(--space-6);
+  font-size: 0.8rem;
+  color: var(--muted);
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-2) var(--space-4);
+}
+
+/* -- Stack grids ----------------------------------------------------------
+   HOW TO EXTEND: add another <article class="silo"> block per silo, or more
+   <li class="badge"> per tool. Grid auto-flows, no CSS change needed. */
+.stack-grid {
+  display: grid;
+  gap: var(--space-4);
+  grid-template-columns: 1fr;
+}
+
+.silo {
+  background: var(--panel);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: var(--space-4);
+}
+
+.silo h3 {
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--title);
+  margin-bottom: var(--space-3);
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+}
+
+.silo h3::before {
+  content: "▚";
+  color: var(--accent);
+  font-size: 0.8rem;
+}
+
+/* Security silo gets the amber marker instead of cyan */
+.silo--sec h3::before {
+  content: "⚠";
+  color: var(--warn);
+}
+
+/* -- Projects -------------------------------------------------------------
+   HOW TO ADD A PROJECT: edit js/data.js → push one object to PROJECTS.
+   No HTML/CSS edit needed; main.js renders a <article class="card"> here.
+   Prefer newest-first order in the array. */
+.project-grid {
+  display: grid;
+  gap: var(--space-4);
+  grid-template-columns: 1fr;
+}
+
+/* -- Write-ups (log / bulletin list) --------------------------------------
+   HOW TO ADD A WRITE-UP: push one object to WRITEUPS in js/data.js
+   { date, category, title, status }. Sorted newest-first at render. */
+.log-list {
+  list-style: none;
+  padding: 0;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  overflow: hidden;
+  background: var(--panel);
+}
+
+/* -- Contact strip -------------------------------------------------------- */
+.contact-panel {
+  background: var(--panel);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: var(--space-6) var(--space-4);
+  display: grid;
+  gap: var(--space-4);
+}
+
+/* -- Footer --------------------------------------------------------------- */
+.site-footer {
+  border-top: 1px solid var(--border);
+  background: var(--bg-raised);
+  padding-block: var(--space-6);
+  font-size: 0.82rem;
+}
+
+.footer-inner {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-3) var(--space-6);
+  align-items: center;
+  justify-content: space-between;
+}
+
+.pgp-box {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--space-2);
+  min-width: 0; /* let the fingerprint shrink instead of pushing the page wider */
+  max-width: 100%;
+}
+
+/* -- Breakpoints ----------------------------------------------------------- */
+@media (min-width: 720px) {
+  .stack-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .stack-grid .silo:last-child {
+    grid-column: 1 / -1; /* 3rd silo spans full width on 2-col layout */
+  }
+
+  .contact-panel {
+    grid-template-columns: 1.2fr 1fr;
+    align-items: center;
+    padding: var(--space-8) var(--space-6);
+  }
+}
+
+@media (min-width: 1024px) {
+  .stack-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .stack-grid .silo:last-child {
+    grid-column: auto;
+  }
+
+  .project-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  /* Flagship (first) card spans both columns for hierarchy */
+  .project-grid .card:first-child {
+    grid-column: 1 / -1;
+  }
+}

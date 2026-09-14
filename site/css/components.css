@@ -1,0 +1,300 @@
+/* ==========================================================================
+   components.css — buttons, badges, cards, status pill, log rows.
+   Flat style only: 1px borders, 6px radius max, no gradients / 3D.
+   ========================================================================== */
+
+/* -- Buttons -------------------------------------------------------------- */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2);
+  font-size: 0.82rem;
+  font-weight: 600;
+  padding: var(--space-2) var(--space-4);
+  border: 1px solid var(--border-strong);
+  border-radius: var(--radius);
+  background: var(--panel);
+  color: var(--title);
+  min-height: 44px; /* touch target (a11y) */
+  white-space: nowrap;
+}
+
+.btn:hover {
+  border-color: var(--accent);
+  color: var(--accent);
+  text-decoration: none;
+}
+
+.btn--primary {
+  background: var(--accent);
+  border-color: var(--accent);
+  color: #06121a;
+}
+
+.btn--primary:hover {
+  background: #7dd3fc;
+  border-color: #7dd3fc;
+  color: #06121a;
+}
+
+.btn--ghost {
+  background: transparent;
+}
+
+/* -- Status pill (telemetry) ---------------------------------------------- */
+.status-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2);
+  font-size: 0.72rem;
+  letter-spacing: 0.03em;
+  color: var(--ok);
+  background: rgba(52, 211, 153, 0.08);
+  border: 1px solid rgba(52, 211, 153, 0.35);
+  border-radius: var(--radius);
+  padding: var(--space-1) var(--space-2);
+  white-space: nowrap;
+}
+
+.status-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--ok);
+  flex: none;
+  animation: blink 2s infinite;
+}
+
+@keyframes blink {
+  0%,
+  100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.35;
+  }
+}
+
+/* -- Badges / tags --------------------------------------------------------- */
+.badge-list {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-2);
+}
+
+.badge {
+  font-size: 0.75rem;
+  color: var(--title);
+  background: var(--bg-raised);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: var(--space-1) var(--space-2);
+  white-space: nowrap;
+}
+
+.badge:hover {
+  border-color: var(--accent);
+}
+
+/* Amber variant = security-flavoured tags (Burp, Kali, pwn, reverse…) */
+.badge--sec {
+  color: var(--warn);
+  border-color: rgba(245, 158, 11, 0.4);
+  background: var(--warn-dim);
+}
+
+/* Cyan variant = flagship / primary stack highlight */
+.badge--hot {
+  color: var(--accent);
+  border-color: rgba(56, 189, 248, 0.4);
+  background: var(--accent-dim);
+}
+
+/* -- Project cards ---------------------------------------------------------- */
+.card {
+  background: var(--panel);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: var(--space-6) var(--space-4);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+}
+
+.card:hover {
+  border-color: var(--border-strong);
+  background: var(--panel-hover);
+}
+
+.card-top {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: var(--space-2) var(--space-3);
+}
+
+.card-title {
+  font-size: 1.05rem;
+}
+
+.card-flag {
+  font-size: 0.7rem;
+  color: var(--warn);
+  border: 1px solid rgba(245, 158, 11, 0.45);
+  background: var(--warn-dim);
+  border-radius: var(--radius);
+  padding: 0.1em 0.5em;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+}
+
+.card-problem {
+  font-size: 0.95rem;
+}
+
+.card-label {
+  font-family: var(--mono);
+  font-size: 0.72rem;
+  text-transform: uppercase;
+  letter-spacing: 0.07em;
+  color: var(--muted);
+  margin-top: var(--space-2);
+}
+
+.card-metrics {
+  list-style: none;
+  padding: 0;
+  display: grid;
+  gap: var(--space-1);
+  font-size: 0.88rem;
+}
+
+.card-metrics li::before {
+  content: "> ";
+  color: var(--accent);
+  font-family: var(--mono);
+}
+
+.card-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-3);
+  margin-top: auto;
+  padding-top: var(--space-3);
+  font-size: 0.85rem;
+}
+
+/* -- Log rows (CTF & write-ups) --------------------------------------------- */
+.log-row {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--space-1) var(--space-3);
+  padding: var(--space-3) var(--space-4);
+  border-bottom: 1px solid var(--border);
+  font-size: 0.85rem;
+  align-items: baseline;
+}
+
+.log-row:last-child {
+  border-bottom: 0;
+}
+
+.log-row:hover {
+  background: var(--panel-hover);
+}
+
+.log-date {
+  color: var(--muted);
+  font-size: 0.75rem;
+  white-space: nowrap;
+}
+
+.log-cat {
+  font-size: 0.72rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.log-cat--web {
+  color: var(--accent);
+}
+
+.log-cat--forensics,
+.log-cat--reverse,
+.log-cat--pwn,
+.log-cat--crypto,
+.log-cat--misc {
+  color: var(--warn);
+}
+
+.log-title {
+  color: var(--title);
+}
+
+.log-status {
+  font-size: 0.72rem;
+  justify-self: start;
+  border: 1px solid var(--border-strong);
+  border-radius: var(--radius);
+  padding: 0.1em 0.5em;
+  white-space: nowrap;
+}
+
+.log-status[data-status="solved"] {
+  color: var(--accent);
+  border-color: rgba(56, 189, 248, 0.4);
+  background: var(--accent-dim);
+}
+
+.log-status[data-status="ongoing"] {
+  color: var(--warn);
+  border-color: rgba(245, 158, 11, 0.4);
+  background: var(--warn-dim);
+}
+
+@media (min-width: 720px) {
+  .log-row {
+    /* date | category | title (flex) | status — reads like a syslog line */
+    grid-template-columns: 110px 110px 1fr auto;
+  }
+
+  .log-status {
+    justify-self: end;
+  }
+}
+
+/* -- PGP + footer bits ------------------------------------------------------- */
+.pgp-key {
+  font-size: 0.75rem;
+  color: var(--muted);
+  background: var(--bg);
+  border: 1px dashed var(--border-strong);
+  border-radius: var(--radius);
+  padding: var(--space-1) var(--space-2);
+  overflow-x: auto;
+  max-width: 100%;
+  min-width: 0; /* flex item must be allowed to shrink (default min-width:auto overflows) */
+  flex: 1 1 auto;
+}
+
+.copy-btn {
+  font-family: var(--mono);
+  font-size: 0.75rem;
+  background: transparent;
+  color: var(--accent);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: var(--space-1) var(--space-2);
+  cursor: pointer;
+  min-height: 32px;
+}
+
+.copy-btn:hover {
+  border-color: var(--accent);
+}
+
+.footer-note {
+  color: var(--muted);
+}

@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="ysaiahdh — System, Security, Full-stack. Portfolio: infra, security tooling and development projects, CTF write-ups." />
+  <meta name="theme-color" content="#090d11" />
+  <title>ysaiahdh — System • Security • Full-stack</title>
+
+  <!-- Fonts: mono for headings/meta/badges/code, sans for body.
+       System fallbacks in tokens.css keep the site usable offline. -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;600;700&display=swap"
+    rel="stylesheet"
+  />
+
+  <!-- CSS architecture: tokens → base → layout → components (order matters) -->
+  <link rel="stylesheet" href="css/tokens.css" />
+  <link rel="stylesheet" href="css/base.css" />
+  <link rel="stylesheet" href="css/layout.css" />
+  <link rel="stylesheet" href="css/components.css" />
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <!-- ================= HEADER (terminal title bar) =================
+       Row wraps on mobile: brand | status | nav | actions. No hamburger:
+       wrapping links are simpler, fully accessible, and never clip at 360px. -->
+  <header class="site-header">
+    <div class="container header-inner">
+      <div class="brand">
+        <span class="brand-prompt" aria-hidden="true">$</span>
+        <div>
+          <span class="brand-name">ysaiahdh</span>
+          <span class="brand-tag">System • Security • Full-stack</span>
+        </div>
+      </div>
+
+      <!-- Telemetry status: role="status" announces changes to screen readers -->
+      <span class="status-pill" role="status">
+        <span class="status-dot" aria-hidden="true"></span>
+        [System: Operational]
+      </span>
+
+      <nav class="site-nav" aria-label="Sections">
+        <a href="#stack">stack</a>
+        <a href="#projects">projects</a>
+        <a href="#writeups">writeups</a>
+        <a href="#contact">contact</a>
+      </nav>
+
+      <div class="header-actions">
+        <a class="btn btn--ghost" href="https://github.com/ysaiahdh" target="_blank" rel="noopener">GitHub</a>
+        <!-- TODO: replace with your real LinkedIn URL -->
+        <a class="btn btn--ghost" href="https://www.linkedin.com/in/YOUR-HANDLE" target="_blank" rel="noopener">LinkedIn</a>
+        <!-- TODO: replace with your real email -->
+        <a class="btn btn--primary" href="mailto:you@example.com">Contact</a>
+      </div>
+    </div>
+  </header>
+
+  <main id="main">
+    <!-- ================= HERO ================= -->
+    <section class="hero container" aria-labelledby="hero-title">
+      <p class="section-prompt" aria-hidden="true">$ whoami --verbose</p>
+      <h1 class="hero-title" id="hero-title">
+        Systems. Security. <span class="accent">Full-stack.</span>
+      </h1>
+      <p class="hero-lede">
+        Frontend developer learning React, Python builder, Linux &amp; C hacker,
+        pentesting enthusiast based in France. I love understanding how things
+        work — and how they break.
+      </p>
+      <ul class="hero-cta">
+        <li><a class="btn btn--primary" href="#projects">View case studies</a></li>
+        <li><a class="btn" href="https://github.com/ysaiahdh" target="_blank" rel="noopener">Browse GitHub →</a></li>
+      </ul>
+      <div class="hero-meta meta">
+        <span>loc: FR / remote-friendly</span>
+        <span>focus: linux · python CLIs · local LLMs · CTF forensics</span>
+        <span>open_to: collabs</span>
+      </div>
+    </section>
+
+    <!-- ================= STACK & DOMAINS =================
+         EXTEND: copy one <article class="silo"> per new silo, or one
+         <li class="badge"> per tool. Grid auto-flows, no CSS edit needed.
+         Use badge--sec (amber) for security-flavoured tags. -->
+    <section class="section" id="stack" aria-labelledby="stack-title">
+      <div class="container">
+        <div class="section-head">
+          <span class="section-prompt" aria-hidden="true">$ ls ~/stack --by-domain</span>
+          <h2 id="stack-title">Stack &amp; Domains</h2>
+          <p>Compact badges grouped by silo. Security tooling is amber; core stack is neutral.</p>
+        </div>
+
+        <div class="stack-grid">
+          <article class="silo" aria-labelledby="silo-sys">
+            <h3 id="silo-sys">Systems &amp; Infra</h3>
+            <ul class="badge-list">
+              <li class="badge">C</li>
+              <li class="badge">Linux</li>
+              <li class="badge">Bash</li>
+              <li class="badge">Wayland</li>
+              <li class="badge">Git</li>
+              <li class="badge">Netlify</li>
+            </ul>
+          </article>
+
+          <article class="silo silo--sec" aria-labelledby="silo-sec">
+            <h3 id="silo-sec">Cybersecurity</h3>
+            <ul class="badge-list">
+              <li class="badge badge--sec">Kali Linux</li>
+              <li class="badge badge--sec">Burp Suite</li>
+              <li class="badge badge--sec">ExifTool</li>
+              <li class="badge badge--sec">pcap forensics</li>
+              <li class="badge badge--sec">Root-Me</li>
+              <li class="badge badge--sec">Web / Forensics</li>
+            </ul>
+          </article>
+
+          <article class="silo" aria-labelledby="silo-dev">
+            <h3 id="silo-dev">Development &amp; Tools</h3>
+            <ul class="badge-list">
+              <li class="badge badge--hot">Python</li>
+              <li class="badge">FastAPI</li>
+              <li class="badge">React</li>
+              <li class="badge">JavaScript</li>
+              <li class="badge">Node.js</li>
+              <li class="badge">Vite</li>
+              <li class="badge">pytest</li>
+              <li class="badge">ruff</li>
+              <li class="badge">ChromaDB</li>
+              <li class="badge">LM Studio</li>
+            </ul>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= CASE STUDIES =================
+         Rendered from js/data.js (PROJECTS array). TO ADD A PROJECT: push one
+         object there — no HTML edit needed. First item = flagship, spans full
+         width on desktop via .card:first-child. -->
+    <section class="section" id="projects" aria-labelledby="projects-title">
+      <div class="container">
+        <div class="section-head">
+          <span class="section-prompt" aria-hidden="true">$ cat ./case-studies/*.md</span>
+          <h2 id="projects-title">Case Studies</h2>
+          <p>Problem → stack → metrics. Each card links to the repo and, when available, a live demo.</p>
+        </div>
+
+        <div class="project-grid" id="project-grid">
+          <!-- main.js injects <article class="card"> per PROJECTS entry -->
+        </div>
+        <noscript>
+          <p>Enable JavaScript to render case studies, or browse them directly on
+            <a href="https://github.com/ysaiahdh">GitHub</a>.</p>
+        </noscript>
+      </div>
+    </section>
+
+    <!-- ================= CTF & WRITE-UPS =================
+         Rendered from js/data.js (WRITEUPS array, newest-first). TO ADD: push
+         { date, category, title, url, status } with status "solved"|"ongoing". -->
+    <section class="section" id="writeups" aria-labelledby="writeups-title">
+      <div class="container">
+        <div class="section-head">
+          <span class="section-prompt" aria-hidden="true">$ tail -n 20 /var/log/ctf.log</span>
+          <h2 id="writeups-title">CTF &amp; Write-ups</h2>
+          <p>Bulletin-style log. Categories double as filters for future write-up pages.</p>
+        </div>
+
+        <ol class="log-list" id="log-list">
+          <!-- main.js injects <li class="log-row"> per WRITEUPS entry -->
+        </ol>
+        <noscript>
+          <p>Enable JavaScript to render the log, or follow progress on
+            <a href="https://github.com/ysaiahdh">GitHub</a>.</p>
+        </noscript>
+      </div>
+    </section>
+
+    <!-- ================= CONTACT ================= -->
+    <section class="section" id="contact" aria-labelledby="contact-title">
+      <div class="container">
+        <div class="section-head">
+          <span class="section-prompt" aria-hidden="true">$ ./contact.sh --fastest-route</span>
+          <h2 id="contact-title">Contact</h2>
+        </div>
+
+        <div class="contact-panel">
+          <div>
+            <h3>Fastest route: open an issue on any repo.</h3>
+            <p>I read everything. Ask me about React, Python CLIs, Linux, local
+              LLMs, EXIF/metadata, or CTF forensics.</p>
+          </div>
+          <div class="hero-cta">
+            <!-- TODO: replace with your real email -->
+            <a class="btn btn--primary" href="mailto:you@example.com">you@example.com</a>
+            <a class="btn" href="https://github.com/ysaiahdh" target="_blank" rel="noopener">GitHub issues →</a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ================= FOOTER ================= -->
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div class="pgp-box">
+        <!-- TODO: replace with your real PGP fingerprint -->
+        <span class="meta">PGP:</span>
+        <code class="pgp-key" id="pgp-key">TODO:ABCD 1234 EFGH 5678 IJKL 9012 MNOP 3456 QRST 7890</code>
+        <button class="copy-btn" id="copy-pgp" type="button">copy</button>
+      </div>
+      <p class="footer-note meta">© <span id="year">2026</span> ysaiahdh · plain HTML/CSS, no tracker</p>
+    </div>
+  </footer>
+
+  <!-- Classic (non-module) scripts so the site works via file:// with no
+       build step — important for the "local files only" constraint. -->
+  <script src="js/data.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>

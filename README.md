@@ -21,13 +21,13 @@
 
 ### 👋 About Me
 
-- 🌍 Based in **France**, building in English for the world
-- 💻 Frontend first: **HTML / CSS / JavaScript → React**, clean & responsive UIs
-- 🐍 Python builder: CLIs, automation, local AI tooling (`argparse`, FastAPI, pytest, ruff)
-- ⚙️ Low-level curious: **C on Linux**, Wayland, syscalls, tiny dependency-free binaries
-- 🔐 Security-driven: **pentesting & CTF learner** — I build with an attacker mindset
-- 👯 I love **learning in public** and building in **teams**
-- ⚡ Fun fact: I once rescued hundreds of camp photos that all said “June 2026” — so I wrote an AI to give them their timeline back
+-  Based in **France**, building in English for the world
+-  Frontend first: **HTML / CSS / JavaScript → React**, clean & responsive UIs
+-  Python builder: CLIs, automation, local AI tooling (`argparse`, FastAPI, pytest, ruff)
+-  Low-level curious: **C on Linux**, Wayland, syscalls, tiny dependency-free binaries
+-  Security-driven: **pentesting & CTF learner** — I build with an attacker mindset
+-  I love **learning in public** and building in **teams**
+-  Fun fact: I once rescued hundreds of camp photos that all said “June 2026” — so I wrote an AI to give them their timeline back
 
 ---
 

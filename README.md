@@ -66,11 +66,11 @@
 **Why it matters:** born from a real pain (hundreds of summer-camp photos all stamped with the download date). Reads dates hidden in folder names like `01-05 Kayak trip`, merges a JSON schedule, and writes proper EXIF back.
 
 **Highlights:**
-- 🧙 Interactive `--wizard` (5 steps: folder → schedule → refs → dry-run → confirm)
-- 🧠 Visual matching: ResNet-18 or lightweight perceptual hash against your own dated photos
-- 🛡️ Safety-first: `--dry-run`, HTML timeline, CSV report + `--undo` rollback
-- ⏱️ Clock-drift detection (`--sync-clocks`), duplicates detection, filename timestamps win
-- ✅ Tested: `pytest` + `ruff`, Python ≥3.9, EN/FR docs, MIT
+-  Interactive `--wizard` (5 steps: folder → schedule → refs → dry-run → confirm)
+-  Visual matching: ResNet-18 or lightweight perceptual hash against your own dated photos
+-  Safety-first: `--dry-run`, HTML timeline, CSV report + `--undo` rollback
+-  Clock-drift detection (`--sync-clocks`), duplicates detection, filename timestamps win
+-  Tested: `pytest` + `ruff`, Python ≥3.9, EN/FR docs, MIT
 
 <p>
   <img src="https://img.shields.io/badge/python-3670A0?style=flat&logo=python&logoColor=ffdd54" alt="Python"/>
@@ -84,10 +84,10 @@
 > Markdown + PDF vault, RAG chat with citations, flashcards (SM-2), mock exams, and knowledge graph — wired to a local LLM. Nothing leaves your machine.
 
 **Highlights:**
-- 💬 4 prompt modes: Explain / Summarize / Feynman / Quizzer, streamed SSE with `[1][2]` citations
-- 🗂️ Header-aware chunking, MMR retrieval, incremental hash-based reindex + file watcher
-- 🃏 Flashcards + Anki CSV export, evidence-graded open questions, graph (wikilinks/tags/semantic)
-- 🧪 21 offline tests, FastAPI + React + Chroma + SQLite FTS5
+-  4 prompt modes: Explain / Summarize / Feynman / Quizzer, streamed SSE with `[1][2]` citations
+-  Header-aware chunking, MMR retrieval, incremental hash-based reindex + file watcher
+-  Flashcards + Anki CSV export, evidence-graded open questions, graph (wikilinks/tags/semantic)
+-  21 offline tests, FastAPI + React + Chroma + SQLite FTS5
 
 <p>
   <img src="https://img.shields.io/badge/FastAPI-009688?style=flat&logo=fastapi&logoColor=white" alt="FastAPI"/>
@@ -101,10 +101,10 @@
 > Fast typing for Linux: fish-style suggestions in bash + system-wide snippet picker for KDE Wayland. One ~60KB C binary, no GUI toolkit.
 
 **Highlights:**
-- ⚡ ~1ms suggestions, frecency scoring (`count × recency × 3× cwd_boost`)
-- 🖥️ Wayland-native picker (ext-data-control, shm rendering), no keyloggers, no X11
-- 🔒 Privacy-first: local plain-text history + TOML snippets, nothing leaves the machine
-- 🧪 Hermetic e2e suite (16 checks), vendored protocols for reproducible builds
+-  ~1ms suggestions, frecency scoring (`count × recency × 3× cwd_boost`)
+-  Wayland-native picker (ext-data-control, shm rendering), no keyloggers, no X11
+-  Privacy-first: local plain-text history + TOML snippets, nothing leaves the machine
+-  Hermetic e2e suite (16 checks), vendored protocols for reproducible builds
 
 <p>
   <img src="https://img.shields.io/badge/C-A8B9CC?style=flat&logo=c&logoColor=black" alt="C"/>

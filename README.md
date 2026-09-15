@@ -117,7 +117,6 @@
 <summary><b>🧪 More experiments</b></summary>
 <br/>
 
-- 🤖 **TikTok Repost Analyzer** — Playwright scraper + spaCy FR + local vision LLM (LM Studio) to profile reposts and generate DM-ready recommendations. Personal research project, offline fixtures included.
 - 📡 **RootMe / pcap notes** — forensics playground: TLS export, SSTV decode, raw captures. Where I practice what I preach on security.
 
 Pin your 3 favorites on your GitHub profile so visitors see EXIF → CogniVault → AutoComplete first.
